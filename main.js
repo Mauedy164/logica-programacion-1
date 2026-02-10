@@ -11,41 +11,56 @@ listaNumeros.push(num2)
 let num3 = Number(prompt('Ingresa el tercer número'))
 listaNumeros.push(num3)
 
-mayor = Math.max(num1,num2,num3)
-menor = Math.min(num1,num2,num3)
 
-
-
-for (let i =0 ; i<listaNumeros.length; i++){
-    if(listaNumeros[i] !== mayor && listaNumeros[i]!== menor){
-        medio = listaNumeros[i]
-    }
+if(num1===num2 && num2===num3 & num1===num3){
+    console.log("Todos los números son iguales");
+}else{
+    if (num1 >= num2 && num1 >= num3) {
+            mayor = num1;
+            if (num2 >= num3) {
+                medio = num2;
+                menor = num3;
+            } else {
+                medio = num3;
+                menor = num2;
+            }
+        } else if (num2 >= num1 && num2 >= num3) {
+            mayor = num2;
+            if (num1 >= num3) {
+                medio = num1;
+                menor = num3;
+            } else {
+                medio = num3;
+                menor = num1;
+            }
+        } else {
+            mayor = num3;
+            if (num1 >= num2) {
+                medio = num1;
+                menor = num2;
+            } else {
+                medio = num2;
+                menor = num1;
+            }
+        }
 }
 
-console.log(mayor);
-console.log(medio);
-console.log(menor);
+let listaMayorAMenor = []
+listaMayorAMenor.push(mayor)
+listaMayorAMenor.push(medio)
+listaMayorAMenor.push(menor)
+console.log(`Lista de mayor a menor: ${listaMayorAMenor}`);
+
+listaMenorAMayor = []
+listaMenorAMayor.push(menor)
+listaMenorAMayor.push(medio)
+listaMenorAMayor.push(mayor)
+console.log(`Lista de menor a mayor : ${listaMenorAMayor}`);
 
 
-function MayorAMenor(listaNumeros) {
-  let n = listaNumeros.length;
-  
-  for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n - 1; j++) {
-      if (listaNumeros[j] < listaNumeros[j + 1]) {
-        let temp = listaNumeros[j];
-        listaNumeros[j] = listaNumeros[j + 1];
-        listaNumeros[j + 1] = temp;
-      }
-    }
-  }
-  return listaNumeros;
-}
 
-let mayorAMenor = MayorAMenor(listaNumeros)
-let menorAMayor = [mayorAMenor].reverse()
-console.log(`Lista de mayor a menor ${mayorAMenor}`);
-console.log(`Lista de menor a mayor ${menorAMayor}`);
+
+
 
 
 
