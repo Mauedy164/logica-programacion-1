@@ -12,7 +12,10 @@ let num3 = Number(prompt('Ingresa el tercer número'))
 listaNumeros.push(num3)
 
 
-if(num1===num2 && num2===num3 & num1===num3){
+if(num1===num2 && num2===num3 && num1===num3){
+    mayor = num1;
+    menor = num1;
+    medio = num1;
     console.log("Todos los números son iguales");
 }else{
     if (num1 >= num2 && num1 >= num3) {
@@ -51,16 +54,10 @@ listaMayorAMenor.push(medio)
 listaMayorAMenor.push(menor)
 console.log(`Lista de mayor a menor: ${listaMayorAMenor}`);
 
-listaMenorAMayor = []
+let listaMenorAMayor = []
 listaMenorAMayor.push(menor)
 listaMenorAMayor.push(medio)
 listaMenorAMayor.push(mayor)
 console.log(`Lista de menor a mayor : ${listaMenorAMayor}`);
-
-
-
-
-
-
 
 
